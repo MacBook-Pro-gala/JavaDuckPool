@@ -17,7 +17,7 @@ public class GameFrame extends JFrame implements GameConstants {
 			}
 			///注释
 
-
+			//
 			//第二次注释
 		}
 	}
