@@ -6,7 +6,7 @@
 ![image](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image.png)
 
 ### 设置界面
-![image](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image%20%5B2%5D.png1)
+![image](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image%20%5B2%5D.png)
 
 ### 关于界面
 ![image](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image%20%5B3%5D.png)
