@@ -3,7 +3,7 @@
 ## 项目展示
 ### 开始界面
 拥有半透明界面，更加美观
-![image-20200427140547976](C:\Users\lyhgz\AppData\Roaming\Typora\typora-user-images\image-20200427140547976.png)
+![image](images/Image [2].png)
 
 ### 设置界面
 ![98570ae9dfd8bd59e6d529b0331e9dec.png](en-resource://database/30543:1)
