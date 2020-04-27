@@ -6,21 +6,21 @@
 ![image](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image.png)
 
 ### 设置界面
-![98570ae9dfd8bd59e6d529b0331e9dec.png](en-resource://database/30543:1)
+![image](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image%20%5B2%5D.png1)
 
 ### 关于界面
-![0aa946d11de4213d6ed5b2adca56aa50.png](en-resource://database/30545:1)
+![image](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image%20%5B3%5D.png)
 
 ### 模型主界面（未生成领头鸭）
-![5ab287edd69ce55778a3e2923e131a3f.png](en-resource://database/30547:1)
+![image](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image%20%5B4%5D.png)
 
 ### 模型主界面（生成领头鸭）
-![8a24749cf2ca05134676b89f90035fcb.png](en-resource://database/30549:1)
+![image](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image%20%5B5%5D.png)
 
 
 
 ## 项目架构
-![1095f6fa3e36f86c818120806593c9ae.png](en-resource://database/30533:1)@w=300
+![image](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image%20%5B6%5D.png)@w=300
 项目共有
 
 * 9个类
@@ -54,7 +54,7 @@
 ### 音频播放实现
 
 [http://www.javazoom.net/javalayer/javalayer.html](http://www.javazoom.net/javalayer/javalayer.html)
-![7c14c4912f836da9bf0784f0c997c323.png](en-resource://database/30535:1)
+![image](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image%20%5B7%5D.png)
 
 
 ### 碰撞实现
@@ -118,7 +118,7 @@ public void move() {
 池塘画板类，也是整个项目最重要的类，大部分线程在其中实现
 
 #### UML
-![7ba348908dfe340fabff85524f4c566d.png](en-resource://database/30537:1)@w=600
+![image](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image%20%5B8%5D.png)@w=600
 
 #### 变量
 
@@ -152,4 +152,4 @@ private void loadBalls() {
 
 ### GameFrame
 #### UML
-![dd5545ff499b1f080c693d54b769f04a.png](en-resource://database/30539:1)@w=600
+![image](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image%20%5B9%5D.png)@w=600
