@@ -15,10 +15,7 @@ public class GameFrame extends JFrame implements GameConstants {
 			if (value instanceof FontUIResource) {
 				UIManager.put(key, fontRes);
 			}
-			///注释
-
-			//
-			//第二次注释
+		//今晚更改了一些代码
 		}
 	}
 	JProgressBar pb = new JProgressBar();
