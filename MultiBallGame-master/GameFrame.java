@@ -16,6 +16,9 @@ public class GameFrame extends JFrame implements GameConstants {
 				UIManager.put(key, fontRes);
 			}
 			///注释
+
+
+			//第二次注释
 		}
 	}
 	JProgressBar pb = new JProgressBar();
