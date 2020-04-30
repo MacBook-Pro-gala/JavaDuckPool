@@ -12,10 +12,10 @@ With translucent interface, more beautiful
 ![image](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image%20%5B3%5D.png)
 
 ### The main interface of the model (the leader duck is not generated)
-![image](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image%5B6%5D.jpg](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image[6].jpg))
+![image](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image%5B6%5D.jpg)
 
 ### The main interface of the model (to generate the leading duck)
-![image](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image%5B7%5D.jpg](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image[7].jpg))
+![image](https://github.com/liuyuhan1234/JavaDuckPool/blob/master/images/Image%5B7%5D.jpg)
 
 
 
