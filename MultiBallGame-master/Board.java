@@ -24,13 +24,13 @@ private int y = 5;
 public static int playmusic=1;
 public static int playduckmusic=0;
 static int MAX_BALLS = 6;
-static 	int MAX_Lilies = 15;
+static 	int MAX_Lilies = 20;
 //int speed ;
 
 //private Ball[] balls = new Ball[1];
 ArrayList <Ball> balls =new ArrayList<>();
 ArrayList <lilies> lilies = new ArrayList<>();
-
+ArrayList <Rock> rocks = new ArrayList<>();
 
 ArrayList <Ball> smallduck = new ArrayList<>();
 private void loadBalls() {
@@ -39,11 +39,14 @@ private void loadBalls() {
 
 
 }
-
 private void loadLilies(){
 		lilies.add(new lilies());
 
 }
+private void loadRocks(){
+		rocks.add(new Rock());
+
+	}
 
 private void checkCollision() {
 	for(int i =0; i<balls.size(); i++) {
@@ -69,10 +72,21 @@ private void checkCollision2() {    //球和水仙花碰撞
 		}
 	}
 }
+private void checkCollision3() {    //球和水仙花碰撞
+		for(int i =0; i<balls.size(); i++) {
+			for(int j = 0; j<rocks.size(); j++) {
+
+				if(isCollide3(balls.get(i), rocks.get(j))) {
+					balls.get(i).setxSpeed(balls.get(i).getxSpeed() * -1);
+					balls.get(i).setySpeed(balls.get(i).getySpeed() * -1);
+				}
+			}
+		}
+	}
 private void checkheadduck(){  //检查有没有领头鸭
 	ArrayList <String> CheckHeadDuckin =new ArrayList<String>();
 	for(int i =0; i<balls.size(); i++) {              //这个for循环改变图片
-		if(balls.get(i).getLifesecond()>=200){
+		if(balls.get(i).getLifesecond()>=180){
 			balls.get(i).duckpicture="./png/10xiaodongwu_06.png";
 		}
 		else {
@@ -112,7 +126,12 @@ private boolean isCollide2(Ball firstBall, lilies secondLilies) {
 	return xDistance<=firstBall.getLifesecond()
 			&& yDistance<=firstBall.getLifesecond();
 }
-
+private boolean isCollide3(Ball firstBall, Rock secondrock) {
+	int xDistance = Math.abs(firstBall.getX() - secondrock.getX());
+	int yDistance = Math.abs(firstBall.getY() - secondrock.getY());
+	return xDistance<=firstBall.getLifesecond()
+			&& yDistance<=firstBall.getLifesecond();
+	}
 
 int ySpeed;
 	public Board() {
@@ -178,6 +197,9 @@ int ySpeed;
 					loadLilies();
 					loadLilies();
 				}
+				if(rocks.size()<=4){
+					loadRocks();
+				}
 				try {
 
 					Thread.sleep(sleep2);
@@ -194,6 +216,7 @@ int ySpeed;
 					checkCollision();
 				}
 				checkCollision2();
+				checkCollision3();
 				checkheadduck();
 				try {
 
@@ -278,8 +301,8 @@ int ySpeed;
 					}
 					for (int i = 1; i < balls.size(); i++) {
 
-							balls.get(i).xSpeed = (balls.get(i-1).x - balls.get(i).x) / 40;
-							balls.get(i).ySpeed = (balls.get(i-1).y - balls.get(i).y )/ 40;
+						balls.get(i).xSpeed = (balls.get(i-1).x - balls.get(i).x) / 40;
+						balls.get(i).ySpeed = (balls.get(i-1).y - balls.get(i).y )/ 40;
 //							smallduck.add(balls.get(i));
 
 					}
@@ -345,12 +368,20 @@ private void drawLilies (Graphics g){
 		}
 	}
 }
+private void drawRocks (Graphics g){
+	if(rocks.size()!=0) {
+		for (Rock rocks : rocks) {
+			rocks.drawRock(g);
+		}
+	}
+}
 @Override
 public void paintComponent(Graphics g) {
 	super.paintComponent(g);
 	g.drawImage(new ImageIcon("./png/river6.jpg").getImage(),0,0,GWIDTH,GHEIGHT, null);
 	drawBalls(g);
 	drawLilies(g);
+	drawRocks(g);
 	//ball.drawBall(g);
 //	g.setColor(Color.YELLOW);
 //	g.fillOval(x, y, 50, 50);

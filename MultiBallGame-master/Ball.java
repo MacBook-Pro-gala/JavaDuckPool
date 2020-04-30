@@ -8,6 +8,7 @@ public class Ball implements GameConstants {
 	private int h;
 	public int xSpeed;
 	public int ySpeed;
+	public int line;
 	public int lifesecond;
 	public String duckpicture="./png/鸭.png";
 	private Color color;
