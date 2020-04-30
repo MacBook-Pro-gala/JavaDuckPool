@@ -1,4 +1,7 @@
 # **duck pond model**
+
+https://github.com/liuyuhan1234/JavaDuckPool
+
 [toc]
 ## Project display
 ### Start interface
