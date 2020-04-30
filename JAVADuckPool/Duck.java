@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Ball implements GameConstants {
+public class Duck implements GameConstants {
 	
 	public int x;
 	public int y;
@@ -48,7 +48,7 @@ public class Ball implements GameConstants {
 		x+=xSpeed;
 		y+=ySpeed;
 	}
-	public Ball() {
+	public Duck() {
 
 		this.x =   ballPostion.getRandom();
 		this.y = ballPostiony.getRandom();

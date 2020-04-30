@@ -1,16 +1,11 @@
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.lang.Math;
-import java.util.Objects;
 import javax.swing.*;
 import java.util.Collections;
 import static sun.swing.MenuItemLayoutHelper.max;
@@ -28,14 +23,14 @@ static 	int MAX_Lilies = 20;
 //int speed ;
 
 //private Ball[] balls = new Ball[1];
-ArrayList <Ball> balls =new ArrayList<>();
+ArrayList <Duck> ducks =new ArrayList<>();
 ArrayList <lilies> lilies = new ArrayList<>();
 ArrayList <Rock> rocks = new ArrayList<>();
 
-ArrayList <Ball> smallduck = new ArrayList<>();
+ArrayList <Duck> smallduck = new ArrayList<>();
 private void loadBalls() {
 
-		balls.add(new Ball());
+		ducks.add(new Duck());
 
 
 }
@@ -49,53 +44,53 @@ private void loadRocks(){
 	}
 
 private void checkCollision() {
-	for(int i =0; i<balls.size(); i++) {
-		for(int j = i + 1; j<balls.size(); j++) {
-			if(isCollide(balls.get(i), balls.get(j))) {
-					balls.get(i).setxSpeed(balls.get(i).getxSpeed() * -1);
-					balls.get(i).setySpeed(balls.get(i).getySpeed() * -1);
-					balls.get(j).setxSpeed(balls.get(j).getxSpeed() * -1);
-					balls.get(j).setySpeed(balls.get(j).getySpeed() * -1);
+	for(int i = 0; i< ducks.size(); i++) {
+		for(int j = i + 1; j< ducks.size(); j++) {
+			if(isCollide(ducks.get(i), ducks.get(j))) {
+					ducks.get(i).setxSpeed(ducks.get(i).getxSpeed() * -1);
+					ducks.get(i).setySpeed(ducks.get(i).getySpeed() * -1);
+					ducks.get(j).setxSpeed(ducks.get(j).getxSpeed() * -1);
+					ducks.get(j).setySpeed(ducks.get(j).getySpeed() * -1);
 			}
 		}
 	}
 }
 private void checkCollision2() {    //球和水仙花碰撞
-	for(int i =0; i<balls.size(); i++) {
+	for(int i = 0; i< ducks.size(); i++) {
 		for(int j = 0; j<lilies.size(); j++) {
 
-			if(isCollide2(balls.get(i), lilies.get(j))) {
+			if(isCollide2(ducks.get(i), lilies.get(j))) {
 				lilies.remove(j);
-				balls.get(i).setLifesecond(balls.get(i).getLifesecond()+15); //吃水仙花加时
+				ducks.get(i).setLifesecond(ducks.get(i).getLifesecond()+15); //吃水仙花加时
 
 			}
 		}
 	}
 }
 private void checkCollision3() {    //球和水仙花碰撞
-		for(int i =0; i<balls.size(); i++) {
+		for(int i = 0; i< ducks.size(); i++) {
 			for(int j = 0; j<rocks.size(); j++) {
 
-				if(isCollide3(balls.get(i), rocks.get(j))) {
-					balls.get(i).setxSpeed(balls.get(i).getxSpeed() * -1);
-					balls.get(i).setySpeed(balls.get(i).getySpeed() * -1);
+				if(isCollide3(ducks.get(i), rocks.get(j))) {
+					ducks.get(i).setxSpeed(ducks.get(i).getxSpeed() * -1);
+					ducks.get(i).setySpeed(ducks.get(i).getySpeed() * -1);
 				}
 			}
 		}
 	}
 private void checkheadduck(){  //检查有没有领头鸭
 	ArrayList <String> CheckHeadDuckin =new ArrayList<String>();
-	for(int i =0; i<balls.size(); i++) {              //这个for循环改变图片
-		if(balls.get(i).getLifesecond()>=180){
-			balls.get(i).duckpicture="./png/10xiaodongwu_06.png";
+	for(int i = 0; i< ducks.size(); i++) {              //这个for循环改变图片
+		if(ducks.get(i).getLifesecond()>=180){
+			ducks.get(i).duckpicture="./png/10xiaodongwu_06.png";
 		}
 		else {
-			balls.get(i).duckpicture="./png/鸭.png";
+			ducks.get(i).duckpicture="./png/鸭.png";
 		}
 
 	}
-	for(int i =0; i<balls.size(); i++) {             //这个for提取值到ArrayList
-		CheckHeadDuckin.add(balls.get(i).duckpicture);
+	for(int i = 0; i< ducks.size(); i++) {             //这个for提取值到ArrayList
+		CheckHeadDuckin.add(ducks.get(i).duckpicture);
 	}
 
 	if(CheckHeadDuckin.contains("./png/10xiaodongwu_06.png")){
@@ -113,24 +108,24 @@ private void checkheadduck(){  //检查有没有领头鸭
 
 
 
-private boolean isCollide(Ball firstBall, Ball secondBall) {
-	int xDistance = Math.abs(firstBall.getX() - secondBall.getX());
-	int yDistance = Math.abs(firstBall.getY() - secondBall.getY());
-	return xDistance<=max(firstBall.getLifesecond(),secondBall.getLifesecond())
-			&& yDistance<=firstBall.getLifesecond() && yDistance<=secondBall.getLifesecond();
+private boolean isCollide(Duck firstDuck, Duck secondDuck) {
+	int xDistance = Math.abs(firstDuck.getX() - secondDuck.getX());
+	int yDistance = Math.abs(firstDuck.getY() - secondDuck.getY());
+	return xDistance<=max(firstDuck.getLifesecond(), secondDuck.getLifesecond())
+			&& yDistance<= firstDuck.getLifesecond() && yDistance<= secondDuck.getLifesecond();
 }
 
-private boolean isCollide2(Ball firstBall, lilies secondLilies) {
-	int xDistance = Math.abs(firstBall.getX() - secondLilies.getX());
-	int yDistance = Math.abs(firstBall.getY() - secondLilies.getY());
-	return xDistance<=firstBall.getLifesecond()
-			&& yDistance<=firstBall.getLifesecond();
+private boolean isCollide2(Duck firstDuck, lilies secondLilies) {
+	int xDistance = Math.abs(firstDuck.getX() - secondLilies.getX());
+	int yDistance = Math.abs(firstDuck.getY() - secondLilies.getY());
+	return xDistance<= firstDuck.getLifesecond()
+			&& yDistance<= firstDuck.getLifesecond();
 }
-private boolean isCollide3(Ball firstBall, Rock secondrock) {
-	int xDistance = Math.abs(firstBall.getX() - secondrock.getX());
-	int yDistance = Math.abs(firstBall.getY() - secondrock.getY());
-	return xDistance<=firstBall.getLifesecond()
-			&& yDistance<=firstBall.getLifesecond();
+private boolean isCollide3(Duck firstDuck, Rock secondrock) {
+	int xDistance = Math.abs(firstDuck.getX() - secondrock.getX());
+	int yDistance = Math.abs(firstDuck.getY() - secondrock.getY());
+	return xDistance<= firstDuck.getLifesecond()
+			&& yDistance<= firstDuck.getLifesecond();
 	}
 
 int ySpeed;
@@ -139,12 +134,12 @@ int ySpeed;
 			int sleep = 1000;
 			while (true) {
 				//此线程用来计时
-				for (int i = 0; i < balls.size() - 1; i++) {
-					if(balls.get(i).getLifesecond()<=80){
-						balls.remove(i);
+				for (int i = 0; i < ducks.size() - 1; i++) {
+					if(ducks.get(i).getLifesecond()<=80){
+						ducks.remove(i);
 					}
 					else {
-						balls.get(i).setLifesecond(balls.get(i).getLifesecond() - 2); //减肥
+						ducks.get(i).setLifesecond(ducks.get(i).getLifesecond() - 2); //减肥
 					}
 				}
 				try {
@@ -177,7 +172,7 @@ int ySpeed;
 				//***************————测试————****************//
 
 
-				if(balls.size()<=MAX_BALLS) {
+				if(ducks.size()<=MAX_BALLS) {
 					loadBalls();
 				}
 				try {
@@ -291,18 +286,18 @@ int ySpeed;
 			while (true) {  //鸭子串线程
 				if(playduckmusic==1) {
 					System.out.println("鸭子串线程开始");
-					for (int i = 0; i < balls.size(); i++) {
-						if (balls.get(i).duckpicture == "./png/10xiaodongwu_06.png") {
-							HeadDuckX = balls.get(i).x;
-							HeadDuckY = balls.get(i).y;
-							Collections.swap(balls,0,i);
+					for (int i = 0; i < ducks.size(); i++) {
+						if (ducks.get(i).duckpicture == "./png/10xiaodongwu_06.png") {
+							HeadDuckX = ducks.get(i).x;
+							HeadDuckY = ducks.get(i).y;
+							Collections.swap(ducks,0,i);
 						}
 
 					}
-					for (int i = 1; i < balls.size(); i++) {
+					for (int i = 1; i < ducks.size(); i++) {
 
-						balls.get(i).xSpeed = (balls.get(i-1).x - balls.get(i).x) / 40;
-						balls.get(i).ySpeed = (balls.get(i-1).y - balls.get(i).y )/ 40;
+						ducks.get(i).xSpeed = (ducks.get(i-1).x - ducks.get(i).x) / 40;
+						ducks.get(i).ySpeed = (ducks.get(i-1).y - ducks.get(i).y )/ 40;
 //							smallduck.add(balls.get(i));
 
 					}
@@ -355,10 +350,10 @@ public void gameLoop() {
 }
 
 private void drawBalls(Graphics g) {
-	for(Ball ball : balls) {
-		ball.drawBall(g);
-		ball.move();
-		ball.changeDirection();
+	for(Duck duck : ducks) {
+		duck.drawBall(g);
+		duck.move();
+		duck.changeDirection();
 	}
 }
 private void drawLilies (Graphics g){

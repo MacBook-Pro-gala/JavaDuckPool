@@ -71,7 +71,7 @@ private boolean isCollide(Ball firstBall, Ball secondBall) {
 
 
 ## Introduction of key functions
-### Ball class
+### Duck class
 Which is the duck class
 #### variable
 It declares various parameters of the duck, including but not limited to

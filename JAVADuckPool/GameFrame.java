@@ -22,54 +22,6 @@ public class GameFrame extends JFrame implements GameConstants {
 
 
 
-//		JLabel labelScore = new JLabel("所得分数为:", JLabel.CENTER);
-//		//labelScore.setFont(newFont); //设置新字体
-//		this.add(labelScore, BorderLayout.NORTH);
-
-
-//		JPanel dashboard2 =new JPanel();
-//		dashboard2.setBackground(Color.GRAY);
-//
-//		pb.setMaximum(100);
-//		pb.setValue(50);
-//		pb.setStringPainted(true);
-//		pb.setSize(400,100);
-//		dashboard2.add(pb,BorderLayout.CENTER);
-//		this.add(dashboard2,BorderLayout.WEST);
-//		new Thread(() -> {
-//			int sleep = 1000;
-//			while (pb.getValue()!=0) {
-//				pb.setValue(pb.getValue()-1);
-//				try {
-//
-//					Thread.sleep(sleep);
-//				} catch (InterruptedException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//			}
-//		}).start();
-
-//		JPanel panelButtom = new JPanel(); //新建面板；面板上放置组件
-//		panelButtom.setLayout(new BorderLayout());
-//		JLabel labelHelp;// 帮助信息
-//		labelHelp = new JLabel("按 PageUP 或 PageDown 键改变速度",JLabel.CENTER);
-//		//labelHelp.setFont(newFont); //设置新字体
-//		panelButtom.add(labelHelp, BorderLayout.NORTH);
-//
-//		labelHelp = new JLabel("按 Enter 或 S 键重新开始游戏", JLabel.CENTER);
-//		//labelHelp.setFont(newFont); //设置新字体
-//		panelButtom.add(labelHelp, BorderLayout.CENTER);
-//
-//		labelHelp = new JLabel("按 SPACE 键或 P 键暂停游戏", JLabel.CENTER);
-//		// labelHelp.setFont(newFont); //设置新字体
-//		panelButtom.add(labelHelp, BorderLayout.SOUTH);
-//		this.add(panelButtom, BorderLayout.SOUTH);
-
-
-
-
-
 
 
 		JPanel startmenu =new maobolibk();
